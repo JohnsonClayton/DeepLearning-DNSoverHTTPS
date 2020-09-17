@@ -36,3 +36,6 @@
  - [SANS](https://www.sans.org/reading-room/whitepapers/dns/paper/39160)
  - [NCC](https://research.nccgroup.com/2020/03/30/impact-of-dns-over-https-doh-on-dns-rebinding-attacks/)
  
+ - [DoH Insight: Detecting DNS over HTTPS by Machine Learning](https://dl.acm.org/doi/10.1145/3407023.3409192)
+ - [Detecting Malicious DNS over HTTPS Traffic in Domain Name System using Machine Learning Classifiers](http://pubs.sciepub.com/jcsa/8/2/2/index.html)
+ 
