@@ -34,4 +34,5 @@
 
 ### Additional Reading and Resources for DNS over HTTPS
  - [SANS](https://www.sans.org/reading-room/whitepapers/dns/paper/39160)
+ - [NCC](https://research.nccgroup.com/2020/03/30/impact-of-dns-over-https-doh-on-dns-rebinding-attacks/)
  
