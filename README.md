@@ -11,10 +11,12 @@
   - What do the features describe and how are they useful?
   - Could bias be introduced into the dataset through the collection techniques used?
 - [ ] Feature Selection
-  - Using chi-squared or other techniques
+  - Use [chi-squared](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.chi2.html) or other techniques
+    - [This](https://towardsdatascience.com/chi-square-test-for-feature-selection-in-machine-learning-206b1f0b8223) may be helpful
   - What features are needed for the models to perform adequately on the problems at hand?
 - [ ] Feature Analysis
   - What about the selected features make them useful from a predictive capability point of view?
+  - Distribution plots as seen at the end of [this](https://github.com/rambasnet/DeepLearningMaliciousURLs/blob/master/feature%20analysis.ipynb) jupyter notebook
 - [ ] Experiments  
   - [ ] DNN Models
     - [ ] [Keras-TensorFlow](https://keras.io/)
