@@ -31,3 +31,7 @@
   - [ ] Ensemble Methods
     - [ ] [Random Forest (RF)](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
     - [ ] [AdaBoost (AB)](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)
+
+### Additional Reading and Resources for DNS over HTTPS
+ - [SANS](https://www.sans.org/reading-room/whitepapers/dns/paper/39160)
+ 
