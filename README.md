@@ -5,6 +5,16 @@
 - [ ] Literature Survey/Related Works
   - What is the problem and why are we interested in it?  
   - What previous work has been done applying ML and DL?
+  - What gap in the research exists so that our contribution could be as significant and helpful as possible?
+- [ ] Dataset Description
+  - Describe the dataset and how its features are generated
+  - What do the features describe and how are they useful?
+  - Could bias be introduced into the dataset through the collection techniques used?
+- [ ] Feature Selection
+  - Using chi-squared or other techniques
+  - What features are needed for the models to perform adequately on the problems at hand?
+- [ ] Feature Analysis
+  - What about the selected features make them useful from a predictive capability point of view?
 - [ ] Experiments  
   - [ ] DNN Models
     - [ ] [Keras-TensorFlow](https://keras.io/)
