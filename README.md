@@ -1,5 +1,5 @@
 # DeepLearning-DNSoverHTTPS  
-## Purpose: Exploring use of machine learning and deep learning techniques on the [DoHBrw-2020 dataset](https://www.unb.ca/cic/datasets/dohbrw-2020.html).  
+## Purpose: Exploring use of machine learning and deep learning techniques on the [CIRA-CIC-DoHBrw-2020 dataset](https://www.unb.ca/cic/datasets/dohbrw-2020.html).  
 
 ### To Do:
 - [ ] Literature Survey/Related Works
