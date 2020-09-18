@@ -2,6 +2,12 @@
 ## Purpose: Exploring use of machine learning and deep learning techniques on the [CIRA-CIC-DoHBrw-2020 dataset](https://www.unb.ca/cic/datasets/dohbrw-2020.html).  
 
 ### To Do:
+- [ ] Documentation
+  - Are there sufficient comments on functions
+  - [ ] Presentation-worthy Notebooks
+    - Are jupyter notebooks presentable? How much would I have to do to prepare them for a presentation? (Ideally, none!)
+  - [ ] Downloading dataset
+  - [ ] Discussion of dataset
 - [ ] Literature Survey/Related Works
   - What is the problem and why are we interested in it?  
   - What previous work has been done applying ML and DL?
