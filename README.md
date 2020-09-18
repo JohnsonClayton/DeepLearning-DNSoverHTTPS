@@ -1,6 +1,13 @@
 # DeepLearning-DNSoverHTTPS  
 ## Purpose: Exploring use of machine learning and deep learning techniques on the [CIRA-CIC-DoHBrw-2020 dataset](https://www.unb.ca/cic/datasets/dohbrw-2020.html).  
 
+### Feature Selection
+Using the `chi2` function from `sklearn`, we conducted feature analysis on the CIRA-CIC-DoHBrw-2020 dataset. We have sorted the p-values acquired for both layers of the dataset and presented them in tables below:  
+
+**Table 1: p-Values for Layer 1**  
+| Rank | Feature | p-value |
+| blah | blah | blah |
+
 ### To Do:
 - [ ] Documentation
   - Are there sufficient comments on functions
