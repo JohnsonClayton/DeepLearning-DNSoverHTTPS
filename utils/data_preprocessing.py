@@ -42,3 +42,19 @@ def get_data(path, layer=0, nans=False):
             df.dropna(axis='index', inplace=True)
 
         return df
+
+def balance_data(df, label_column):
+    labels = df[label_column].unique()
+    sample_length_list = []
+    for i in range(len(labels)):
+        samples = df.loc[ df[label_column] == labels[i] ]
+        sample_length_list.append( len(samples) )
+        #print('Number of {} samples: {}'.format(labels[i], len( samples )))
+
+    random_state = 0
+    smallest_count = min(sample_length_list)
+    dfs = []
+    for i in range(len(labels)):
+        dfs.append( df.loc[ df[label_column] == labels[i] ].sample(smallest_count) )
+
+    return pd.concat(dfs)
