@@ -137,4 +137,5 @@ We can see that in Layer 1, there are a lot of zeros! This would mean there are 
  - [NCC](https://research.nccgroup.com/2020/03/30/impact-of-dns-over-https-doh-on-dns-rebinding-attacks/)
  - [DoH Insight: Detecting DNS over HTTPS by Machine Learning](https://dl.acm.org/doi/10.1145/3407023.3409192)
  - [Detecting Malicious DNS over HTTPS Traffic in Domain Name System using Machine Learning Classifiers](http://pubs.sciepub.com/jcsa/8/2/2/index.html)
- 
+ - [A Comprehensive Study of DNS-over-HTTPS Downgrade Attack] (https://www.usenix.org/system/files/foci20-paper-huang.pdf)
+ - [An Empirical Study of the Cost of DNS-over-HTTPS] (https://www.researchgate.net/publication/335833348_An_Empirical_Study_of_the_Cost_of_DNS-over-HTTPS)
