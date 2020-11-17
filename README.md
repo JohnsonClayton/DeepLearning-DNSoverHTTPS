@@ -24,7 +24,7 @@ $ du doh_dataset/ -h
 ```
 
 ### Feature Selection
-Using the `chi2` function from `sklearn`, we conducted feature analysis on the CIRA-CIC-DoHBrw-2020 dataset. We have sorted the p-values acquired for both layers of the dataset and presented them in tables below:  
+Using the `chi2` function from `sklearn`, we conducted feature analysis on the CIRA-CIC-DoHBrw-2020 dataset. We have sorted the p-values acquired for both layers of the dataset and presented them in tables below. [This](https://towardsdatascience.com/feature-selection-correlation-and-p-value-da8921bfb3cf) is a valuable article on feature correlation and p-values.  
 
 **Table 1: p-Values for Layer 1**  
 | Rank | Feature | p-value |
