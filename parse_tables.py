@@ -61,9 +61,9 @@ for line in lines:
                 name = (' '.join(line_arr[:2])).split('.')[-1]
 
             if name == 'Gaussian':
-                name = 'gaussian naive bayes'
+                name = 'gaussian naive\nbayes'
             elif name == 'Linear':
-                name = 'linear discriminant analysis'
+                name = 'linear discriminant  \nanalysis'
 
             # Extract the data from the line
             data = line_arr[-4:]
@@ -115,13 +115,22 @@ datafile.close()
 #    data=df
 #)
 #plt.show()
+    
+plt.rcParams.update({'font.size':25})
+fig, axes = plt.subplots(nrows=2, ncols=2, sharex=True)
+fig.set_size_inches(18, 12)
 
+i = 0
+j = 0
 metrics = ['Accuracy', 'Recall', 'Precision', 'AUC']
 for metric in metrics:
     # Show the accuracy for each model as we increase the number of features
-    plt.rcParams.update({'font.size':25})
-    plt.figure()
-    ax = plt.axes()
+    #plt.figure()
+    ax = axes[i][j] #plt.axes()
+    i += 1
+    if i == 2:
+        i = 0
+        j += 1
 
     # Set up the y limits for the graph (each one may require a little tweaking)
     if metric == 'Accuracy':
@@ -138,7 +147,7 @@ for metric in metrics:
         df_tmp = df.loc[ df['name'] == name ]
 
         # Plot the data
-        plt.plot(
+        ax.plot(
             df_tmp['n_features'],
             df_tmp['{}_avg'.format(metric)],
             label=name
@@ -146,7 +155,7 @@ for metric in metrics:
 
         # Plot the error bars
         #   Graph with a shaded line everything in-between (x, y1) and (x, y2)
-        plt.fill_between(
+        ax.fill_between(
             x=df_tmp['n_features'],
 
             # Everything within the standard deviation above the mean
@@ -160,12 +169,19 @@ for metric in metrics:
         )
 
     # Set up the location of the legend
-    if metric == 'Precision':
-        plt.legend(loc='lower right')
-    else:
-        plt.legend(loc='lower left')
+    #if metric == 'Precision':
+    #    ax.legend(loc='lower right')
+    #else:
+    #    ax.legend(loc='lower left')
+
+    handles, labels = ax.get_legend_handles_labels()
+    lgd = fig.legend(handles, labels, loc='center right', bbox_to_anchor=(1.23, 0.50), frameon=False)
 
     # Set the labels on the graph
-    plt.xlabel('Top N Features')
-    plt.ylabel(metric)
-    plt.show()
+    if i == 0:
+        ax.set_xlabel('Top N Features')
+    ax.set_ylabel(metric)
+fig.tight_layout()
+#plt.show()
+
+fig.savefig('nov23results', bbox_inches='tight')
