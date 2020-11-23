@@ -108,6 +108,7 @@ datafile.close()
 # Use the dataframe to produce the graphs
 
 # Show the experiment time as we increase the number of features
+# As this is right now, this is not a valuable metric because of the settings it was run under
 #plt.figure()
 #sns.lineplot(
 #    x='n_features',
@@ -168,20 +169,25 @@ for metric in metrics:
             alpha=0.15
         )
 
-    # Set up the location of the legend
-    #if metric == 'Precision':
-    #    ax.legend(loc='lower right')
-    #else:
-    #    ax.legend(loc='lower left')
-
+    # Set up the legend
     handles, labels = ax.get_legend_handles_labels()
-    lgd = fig.legend(handles, labels, loc='center right', bbox_to_anchor=(1.23, 0.50), frameon=False)
+    lgd = fig.legend(
+        handles, labels, 
+        loc='center right', 
+
+        # We are using this to position the legend outside of the plots
+        bbox_to_anchor=(1.23, 0.50), 
+
+        # This turns the border of the legend off
+        frameon=False
+        )
 
     # Set the labels on the graph
     if i == 0:
         ax.set_xlabel('Top N Features')
     ax.set_ylabel(metric)
 fig.tight_layout()
-#plt.show()
 
+# Save the figure. We can show it with `plt.show()`, but it doesn't look as pretty and the
+#  legend is not showing up correctly. However, it saves the image correctly.
 fig.savefig('nov23results', bbox_inches='tight')
