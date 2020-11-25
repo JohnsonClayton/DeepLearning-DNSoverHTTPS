@@ -64,6 +64,8 @@ for line in lines:
                 name = 'gaussian naive\nbayes'
             elif name == 'Linear':
                 name = 'linear discriminant  \nanalysis'
+            elif name == 'extreme gradient':
+                name = 'extreme gradient   \nboosting'
 
             # Extract the data from the line
             data = line_arr[-4:]
@@ -116,6 +118,8 @@ datafile.close()
 #    data=df
 #)
 #plt.show()
+
+# Produce the graph with error bars
     
 plt.rcParams.update({'font.size':25})
 fig, axes = plt.subplots(nrows=2, ncols=2, sharex=True)
@@ -176,7 +180,7 @@ for metric in metrics:
         loc='center right', 
 
         # We are using this to position the legend outside of the plots
-        bbox_to_anchor=(1.23, 0.50), 
+        bbox_to_anchor=(1.25, 0.50), 
 
         # This turns the border of the legend off
         frameon=False
@@ -190,4 +194,66 @@ fig.tight_layout()
 
 # Save the figure. We can show it with `plt.show()`, but it doesn't look as pretty and the
 #  legend is not showing up correctly. However, it saves the image correctly.
-fig.savefig('nov23results', bbox_inches='tight')
+fig.savefig('nov23results_err', bbox_inches='tight')
+
+# Produce the graph without error bars
+    
+plt.rcParams.update({'font.size':25})
+fig, axes = plt.subplots(nrows=2, ncols=2, sharex=True)
+fig.set_size_inches(18, 12)
+
+i = 0
+j = 0
+metrics = ['Accuracy', 'Recall', 'Precision', 'AUC']
+for metric in metrics:
+    # Show the accuracy for each model as we increase the number of features
+    #plt.figure()
+    ax = axes[i][j] #plt.axes()
+    i += 1
+    if i == 2:
+        i = 0
+        j += 1
+
+    # Set up the y limits for the graph (each one may require a little tweaking)
+    if metric == 'Accuracy':
+        ax.set_ylim(0.4, 1.0)
+    elif metric == 'Recall':
+        ax.set_ylim(0.4, 1.0)
+    elif metric == 'Precision':
+        ax.set_ylim(0.7, 1.0)
+    elif metric == 'AUC':
+        ax.set_ylim(0.7, 1.0)
+
+    # For every model name in the dataframe
+    for name in df['name'].unique():
+        df_tmp = df.loc[ df['name'] == name ]
+
+        # Plot the data
+        ax.plot(
+            df_tmp['n_features'],
+            df_tmp['{}_avg'.format(metric)],
+            label=name
+        )
+
+    # Set up the legend
+    handles, labels = ax.get_legend_handles_labels()
+    lgd = fig.legend(
+        handles, labels, 
+        loc='center right', 
+
+        # We are using this to position the legend outside of the plots
+        bbox_to_anchor=(1.25, 0.50), 
+
+        # This turns the border of the legend off
+        frameon=False
+        )
+
+    # Set the labels on the graph
+    if i == 0:
+        ax.set_xlabel('Top N Features')
+    ax.set_ylabel(metric)
+fig.tight_layout()
+
+# Save the figure. We can show it with `plt.show()`, but it doesn't look as pretty and the
+#  legend is not showing up correctly. However, it saves the image correctly.
+fig.savefig('nov23results_noerr', bbox_inches='tight')
